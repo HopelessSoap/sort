@@ -1,22 +1,13 @@
-# code from me
-
 function swap!(A, a, b) # swap array indexes a & b
-    # vizualiation stuff
-    compare1[] = a
-    compare2[] = b
+    A[a], A[b] = A[b], A[a]
 
-    temp = A[a] #
-    A[a] = A[b] # this is what matters
-    A[b] = temp #
-    
-    # moar vizualiation stuff
     OA[] = A
     sleep(sleepTime)
 end
 
-function bubble_sort!(A, len = length(A))
-    for i ∈ 1:len-1
-        for j ∈ 2:len
+function bubble_sort!(A = A, n = length(A))
+    for i ∈ 1:n-1
+        for j ∈ 2:n
             if A[j-1] > A[j]
                 swap!(A,j-1,j)
             end

@@ -1,6 +1,6 @@
 # written with the help of an external source
 
-function merge_sort!(A, p = 1, r = length(A))
+function merge_sort!(A = A, p = 1, r = length(A))
     if r > p
         q = div(p+r, 2)
         merge_sort!(A, p, q) # sorts first half

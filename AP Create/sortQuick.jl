@@ -1,4 +1,4 @@
-function quick_sort!(A, lo = 1, hi = length(A))
+function quick_sort!(A = A, lo = 1, hi = length(A))
     i, j = lo, hi
     while i < hi
         pivot = A[(lo+hi)>>>1]
