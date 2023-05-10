@@ -1,16 +1,9 @@
-function swap!(A, a, b) # swap array indexes a & b
-    A[a], A[b] = A[b], A[a]
-end
-
 function heapify!(A, n)
     f = n÷2
     while f≥1
+        update!(A,f,n,f)
         siftdown!(A, f, n)
         f -= 1
-
-        # changing the modulo value changes how fast it sorts, but can reduce the accuracy of the visualization
-        f%4 == 0 ? OA[] = A : continue
-        sleep(sleepTime)
     end
 end
 
@@ -32,9 +25,9 @@ function heap_sort!(A, n = length(A))
         swap!(A, 1, l)
         l -= 1
         siftdown!(A, 1, l)
-
-        # changing the modulo value changes how fast it sorts, but can reduce the accuracy of the visualization
-        l%4 == 0 ? OA[] = A : continue
-        sleep(sleepTime)
-    end; A
+        update!(A,1,l,l)
+    end
+    OA[] = A
+    col[] = A
+    return A
 end
