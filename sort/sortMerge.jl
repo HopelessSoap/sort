@@ -20,12 +20,11 @@ function merge!(A, lo, q, hi)
     @inbounds for k ∈ lo:hi
         if L[i] ≤ R[j]
             A[k] = L[i]
-            update!(A,k,q,k)
             i += 1
         else
             A[k] = R[j]
-            update!(A,k,q,k)
             j += 1
         end
+        update!(A,k,q,k)
     end
 end

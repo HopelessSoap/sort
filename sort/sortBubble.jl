@@ -7,8 +7,8 @@ function bubble_sort!(A, n = length(A))
         for j ∈ 2:n
             if A[j-1] > A[j]
                 swap!(A, j-1, j)
-                update!(A,j,j-1,j)
             end
+            update!(A,j,j-1,j)
         end
     end
     OA[] = A # finally, update the array to ensure that it shows as sorted
